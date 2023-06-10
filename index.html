@@ -38,8 +38,7 @@ Copyright INCORS GmbH. All rights reserved.
     <script>
       backgroundScrollStart();
       function selectIcon(){
-        console.log("DEBUG: select icon ", $('.icon_preview').attr('src'));
-        window.parent.postMessage('Hello from iframe!' + $('.icon_preview').attr('src'), '*');
+        window.parent.postMessage($('.icon_preview').attr('src'), '*');
       }
     </script>
     <div id="abs_cont"></div>
