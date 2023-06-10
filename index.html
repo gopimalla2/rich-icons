@@ -35,7 +35,13 @@ Copyright INCORS GmbH. All rights reserved.
     <script type="text/javascript" src="_iconex_system/_scripts/jquery.incors.background_scroll.js"></script>
   </head>
   <body>
-    <script>backgroundScrollStart();</script>
+    <script>
+      backgroundScrollStart();
+      function selectIcon(){
+        console.log("DEBUG: select icon ", $('.icon_preview').attr('src'));
+        window.parent.postMessage('Hello from iframe!' + $('.icon_preview').attr('src'), '*');
+      }
+    </script>
     <div id="abs_cont"></div>
 
     <!-- container -->
@@ -321,7 +327,7 @@ Copyright INCORS GmbH. All rights reserved.
                       </div>
                     </td>
                     <td id="right_col">
-                      <div id="details"></div>
+                      <div id="details" onclick="selectIcon()"></div>
                     </td>
                   </tr>
                 </tbody>
